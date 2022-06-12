@@ -59,7 +59,16 @@ const GlobalStyles = createGlobalStyle`
     }
 
     .arabic{
-        font-family: 'Noto Naskh Arabic', serif;
+        font-family: 'Al Qalam Quran';        
+    }
+
+    .arabic-number{
+        font-family: 'Noto Naskh Arabic';
+    }
+
+    @font-face {
+        font-family: 'Al Qalam Quran';
+        src: url('/fonts/quran.ttf');
     }
 
 

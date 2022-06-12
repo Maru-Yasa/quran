@@ -57,7 +57,7 @@ export default function AyahComponent({ ayahs, surah, scrollCallback, last }) {
                                     {ayah.translation_id}
                                 </div>
                             </div>
-                            <div className="col-2 arabic fw-bold">
+                            <div className="col-2 arabic-number fw-bold">
                                 {numberToArabic(String(ayah.number))}
                             </div>
                         </motion.div> 
@@ -73,7 +73,7 @@ export default function AyahComponent({ ayahs, surah, scrollCallback, last }) {
                                     {ayah.translation_id}
                                 </div>
                             </div>
-                            <div className="col-2 arabic fw-bold">
+                            <div className="col-2 arabic-number fw-bold">
                                 {numberToArabic(String(ayah.number))}
                             </div>
                         </motion.div>                                

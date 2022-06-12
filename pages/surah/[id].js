@@ -54,7 +54,7 @@ export default function Surah() {
                 <div ref={topRef} className="row justify-content-center">
                     <div className="col-12 m-0 row fixed-top bg-white border border-top-0">
                         <div className="col-2 py-1 mx-0">
-                            <Link href="/"><span className="material-symbols-outlined text-primary back fw-bold">arrow_back_ios</span></Link>
+                            <Link href="/"><span className="fs-5 text-primary back fw-bold"><i className="fw-bold bi bi-arrow-return-left"></i></span></Link>
                         </div>
                         <div className="col fs-4 text-primary fw-bold text-start">
                             <div className="my-0">
