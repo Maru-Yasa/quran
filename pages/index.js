@@ -12,7 +12,7 @@ export default function Home() {
   const [search, setSearch] = useState("a")
   const [loading, setLoading] = useState(true)
   const topRef = useRef(null)
-
+  
   const searchCallback = useCallback((search) => {
     setSearch(search)
   }, [search])
