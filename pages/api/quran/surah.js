@@ -1,18 +1,17 @@
 import fs from 'fs'
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
     try {
-        const surah = req.query.surah;
-        fetch(`https://quran-api.maruyasa.repl.co/api/v1/quran/surah?surah=${surah}`).then(res => res.json())
-        .then(quran => {
-            res.status(200).json(quran) 
+        var surah = req.query.surah;
+        if(surah > 114) surah = 1
+        const dataSurah = await import(`../../../data/surah/${surah}.json`)
+        res.status(200).json({
+            status: 'success',
+            data: dataSurah,
+            msg: 'success fethicng data surah'
         })
     } catch (error) {
-        const surah = req.query.surah;
-        fetch(`https://quran-api.maruyasa.repl.co/api/v1/quran/surah?surah=1`).then(res => res.json())
-        .then(quran => {
-            res.status(200).json(quran) 
-        }) 
+        console.log(error);
     }
 
 }
