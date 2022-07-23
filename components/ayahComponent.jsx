@@ -64,7 +64,7 @@ export default function AyahComponent({ ayahs, surah, scrollCallback, last }) {
 
                     </>) : (<>
                     
-                        <motion.div whileTap={{rotate:[0,5,-5]}} ref={ ayah.number == last.number && surah.number_of_surah == last.surah.number_of_surah ? lastRef : null} onClick={() => { handleClick(ayah.number) }} id={ayah.number} className="col-10 my-2 py-4 px-2 row my-bg my-rounded">
+                        <motion.div key={index} whileTap={{rotate:[0,5,-5]}} ref={ ayah.number == last.number && surah.number_of_surah == last.surah.number_of_surah ? lastRef : null} onClick={() => { handleClick(ayah.number) }} id={ayah.number} className="col-10 my-2 py-4 px-2 row my-bg my-rounded">
                             <div className="col row">
                                 <div className="col-12 text-end arabic fs-4">
                                     {ayah.text}
