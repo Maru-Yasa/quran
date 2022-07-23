@@ -20,7 +20,7 @@ export default function Surah() {
 
     useEffect(() => {
         fetch(`/api/quran/surah?surah=${surah_id}`).then(res => res.json()).then((data) => {
-            setSurah(data)
+            setSurah(data.data)
         })
 
         if(localStorage.getItem('last_surah')){

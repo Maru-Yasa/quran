@@ -4,10 +4,11 @@ import { motion } from 'framer-motion'
 import Link from "next/link";
 import ReactLoading from 'react-loading';
 import SearchBar from "../components/searchBar.server";
+import quranData from '../data/quran.json'
 
 export default function Home() {
 
-  const [quran, setQuran] = useState([])
+  const [quran, setQuran] = useState(quranData)
   const [quranFilter, setQuranFilter] = useState(quran)
   const [search, setSearch] = useState("a")
   const [loading, setLoading] = useState(true)
@@ -21,11 +22,6 @@ export default function Home() {
 
   useEffect(() => {
 
-    fetch('/api/quran').then(res => res.json()).then((data) => {
-      setQuran(data)
-      setQuranFilter(data)
-    })
-
   }, [])
 
   useEffect(() => {
@@ -35,10 +31,6 @@ export default function Home() {
   function filterByValue(array, string) {
     return array.filter(o =>
         Object.keys(name).some(name => o[name].toLowerCase().includes(string.toLowerCase())));
-  }
-
-  const handlechange = (e) => {
-    setSearch(searchRef.current.value)
   }
 
   useEffect(() => {
