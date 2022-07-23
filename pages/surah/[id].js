@@ -14,15 +14,17 @@ export default function Surah() {
     const [last, setLast] = useState({})
     const topRef = useRef(null)
 
+
+
     const scrollCallback = useCallback((lastRef) => {
         if(lastRef.current) scrollTo(lastRef)
     }, [])
 
     useEffect(() => {
-        fetch(`/api/quran/surah?surah=${surah_id}`).then(res => res.json()).then((data) => {
-            setSurah(data.data)
+        import(`../../data/surah/${surah_id}.json`).then((data) => {
+            setSurah(data)
         })
-
+        
         if(localStorage.getItem('last_surah')){
             const last = JSON.parse(localStorage.getItem('last_surah'))
             setLast(last)
